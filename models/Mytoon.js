@@ -1,0 +1,46 @@
+module.exports = function(sequelize, DataTypes) {
+    const Mytoon = sequelize.define('Mytoon', {
+        mytoonNo: {
+            field: "mytoon_no",
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        mytoonTitle: {
+            field: "mytoon_title",
+            type: DataTypes.STRING,
+            unique: true,
+        },
+        mytoonDescription: {
+            field: "mytoon_description",
+            type: DataTypes.STRING,
+        },
+        mytoonThumb: {
+            field: "mytoon_thumb",
+            type: DataTypes.STRING,
+        },
+        mytoonUrl: {
+            field: "mytoon_url",
+            type: DataTypes.STRING,
+        },
+        mytoonGenre: {
+            field: "mytoon_genre",
+            type: DataTypes.STRING,
+        },
+        mytoonAge: {
+            field: "mytoon_age",
+            type: DataTypes.STRING
+        },
+        mytoonBookmark: {
+            field: "mytoon_bookmark",
+            type: DataTypes.INTEGER
+        },
+        mytoonVisiable: {
+            filed: "mytoon_visiable",
+            type: DataTypes.BOOLEAN
+        }
+        
+    });
+
+    return Mytoon;
+}
