@@ -1,8 +1,7 @@
 const models = require('../../models');
 
-exports.getUser= (async (request, response) => {
+exports.join= (async (request, response) => {
 
-    
     await models.User.create(request.body)
     .then(()=> {
         return response.send(true);

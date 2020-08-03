@@ -11,6 +11,10 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             unique: true,
         },
+        mytoonWriter: {
+            field: "mytoon_writer",
+            type: DataTypes.STRING,
+        },
         mytoonDescription: {
             field: "mytoon_description",
             type: DataTypes.STRING,
@@ -29,6 +33,10 @@ module.exports = function(sequelize, DataTypes) {
         },
         mytoonAge: {
             field: "mytoon_age",
+            type: DataTypes.STRING
+        },
+        mytoonWeekday: {
+            field: "mytoon_weekday",
             type: DataTypes.STRING
         },
         mytoonBookmark: {
