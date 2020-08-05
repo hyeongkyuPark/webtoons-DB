@@ -6,6 +6,10 @@ module.exports = function(sequelize, DataTypes) {
             primaryKey: true,
             autoIncrement: true
         },
+        userId: {
+            field: "user_id",
+            type: DataTypes.STRING,
+        },
         mytoonTitle: {
             field: "mytoon_title",
             type: DataTypes.STRING,

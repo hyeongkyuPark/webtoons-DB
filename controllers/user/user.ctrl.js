@@ -22,7 +22,7 @@ exports.login=(async (request, response) => {
     }).then((result) => {
         if(result) {
             if(request.body.userPw == result.userPw) {
-                return response.send(true);
+                return response.send(request.body.userId);
             } else {
                 return response.send('no match pw');
             }

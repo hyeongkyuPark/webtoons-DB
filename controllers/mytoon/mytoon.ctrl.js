@@ -2,13 +2,16 @@ const models = require('../../models');
 const axios = require('axios');
 
 exports.post_mytoon = ((request, response)=> {
-   request.body.forEach(async (item) => {
+
+    
+   request.body.list.forEach(async (item) => {
        
     
     let newToon = await axios.post('http://localhost:3000/search/one', {url: item.url})
        .then((res) => {
             let newToon = {
                 mytoonTitle: item.title,
+                userId: request.body.id,
                 mytoonWriter: res.data.writer,
                 mytoonDescription: res.data.description,
                 mytoonThumb: item.imgUrl,
@@ -40,4 +43,16 @@ exports.get_all = (async (request, response) => {
     .then((result) => {
         response.send(result);
     });
+});
+
+exports.get_my_toon = (async (request, response) => {
+
+    await models.Mytoon.findAll({
+        where : {
+            userId: request.param('userId')
+        }
+    }).then(result => {
+        response.send(result);
+    });
+
 });
