@@ -56,3 +56,13 @@ exports.get_my_toon = (async (request, response) => {
     });
 
 });
+
+
+exports.post_updateBookmark = (async (request, response) => {
+    let updateItem = request.body;
+
+    await models.Mytoon.update({mytoonBookmark:updateItem.newBookmark}, {where: {mytoonNo : updateItem.no}}).then(res => {
+        response.send(true);
+    });
+
+});
